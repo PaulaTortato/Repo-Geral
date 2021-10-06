@@ -1,0 +1,56 @@
+body {
+    background-color: grey;
+}
+
+.nav-icons li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 50px;
+    border: 1px solid purple;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.nav-icons a {
+    text-decoration: none;
+    color: black;
+}
+
+aside {
+    text-align: center;
+    width: 25%;
+    padding: 20px;
+    shape-outside: 25%;
+    float: right;
+    margin-right: 50px;
+}
+
+section {
+    text-align: justify;
+    width: 60%;
+    display: inline-block;
+}
+
+h2, section {
+    padding: 15px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+}
+
+aside, section, article {
+    background-color: white;
+}
+
+aside, article {
+    border: 1px solid purple;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+article {
+    width: 80%;
+}
