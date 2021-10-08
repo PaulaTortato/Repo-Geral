@@ -1,0 +1,49 @@
+div:hover {
+    border: 2px solid yellow;
+}
+
+.div-primaria {
+    background-color: blue;
+}
+
+.div-secundaria {
+    background-color: green;
+}
+
+.div-complementar {
+    background-color: purple;
+    height: 50px;
+ }
+
+.div-escura {
+    background-color: black;
+}
+
+.div-clara {
+    background-color: wheat;
+}
+
+.primaria {
+    color: red;
+}
+
+.secundaria {
+    color: orange;
+}
+
+.complementar {
+    color: darkblue;
+    line-height: 50px;
+}
+
+.escura {
+    color: grey;
+}
+
+.clara {
+    color: whitesmoke;
+}
+
+.primaria, .complementar, .clara {
+    font-style: italic;
+}
