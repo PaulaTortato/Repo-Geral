@@ -71,6 +71,34 @@ function biggerName (names) {
 
 console.log(biggerName(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
 
+function mostFrequent (numbers) {
+  let frequentNum = 0;
+  let counter = 0;
+  let highestCount = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    for (let n = 0; n < numbers.length; n++) {
+      if (numbers[i] == numbers[n]) {
+        counter++;
+      }
+      else {
+        counter = counter;
+      }
+    }
+    if (counter > highestCount) {
+      frequentNum = numbers[i];
+      highestCount = counter;
+    }
+    else {
+      frequentNum = frequentNum;
+      highestCount = highestCount;
+    }
+    counter = 0;
+  }
+  return frequentNum;
+}
+
+console.log(mostFrequent([2, 3, 2, 5, 8, 2, 3, 8, 7, 6, 8, 4, 5, 8, 8, 1, 8]));
+
 function sum (number) {
   let total = 0;
   for (let i = 1; i <= number; i++) {
@@ -97,6 +125,24 @@ function verificaFimPalavra (firstWord, secondWord) {
 }
 
 console.log(verificaFimPalavra('trybe', 'be'));
+
+function evenNumbers (vector) {
+  let evenNumbersArr = [];
+  for (let i = 0; i < vector.length; i++) {
+    // Referência para arrays dentro de arrays: https://www.elated.com/nested-arrays-in-javascript/
+    for (let n = 0; n < vector[i].length; n++) {
+      if (vector[i][n] % 2 == 0) {
+        evenNumbersArr.push(vector[i][n]);
+      }
+      else {
+        evenNumbersArr = evenNumbersArr;
+      }
+    }
+  }
+  return evenNumbersArr;
+}
+
+console.log(evenNumbers([[1, 2], [3,4,5,6], [7,8,9,10]]));
 
 let frutas = {};
 
