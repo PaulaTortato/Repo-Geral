@@ -1,0 +1,10 @@
+document.getElementById('header-container').style.backgroundColor = 'green';
+document.querySelectorAll('.emergency-tasks div')[0].style.backgroundColor = 'pink';
+document.querySelectorAll('.emergency-tasks div')[1].style.backgroundColor = 'pink';
+document.querySelectorAll('.emergency-tasks h3')[0].style.backgroundColor = 'purple';
+document.querySelectorAll('.emergency-tasks h3')[1].style.backgroundColor = 'purple';
+document.querySelectorAll('.no-emergency-tasks div')[0].style.backgroundColor = 'darkblue';
+document.querySelectorAll('.no-emergency-tasks div')[1].style.backgroundColor = 'darkblue';
+document.querySelectorAll('.no-emergency-tasks h3')[0].style.backgroundColor = 'gray';
+document.querySelectorAll('.no-emergency-tasks h3')[1].style.backgroundColor = 'gray';
+document.getElementById('footer-container').style.backgroundColor = 'green';
