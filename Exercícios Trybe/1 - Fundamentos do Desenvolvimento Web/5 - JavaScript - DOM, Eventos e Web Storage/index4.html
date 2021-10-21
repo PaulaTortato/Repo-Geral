@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    let elementoOndeVoceEsta = document.querySelector('#elementoOndeVoceEsta');
+    elementoOndeVoceEsta.parentElement.style.color = 'red';
+    elementoOndeVoceEsta.firstElementChild.innerText = 'Texto';
+    let pai = document.querySelector('#pai');
+    console.log(pai.firstElementChild);
+    console.log(elementoOndeVoceEsta.previousElementSibling);
+    console.log(elementoOndeVoceEsta.nextSibling);
+    console.log(elementoOndeVoceEsta.nextElementSibling);
+    console.log(pai.children[2]);
+    let irmaoElemento = document.createElement('section');
+    irmaoElemento.id = 'irmaoElemento';
+    pai.appendChild(irmaoElemento);
+    let filhoElemento = document.createElement('section');
+    filhoElemento.id = 'filhoElemento';
+    elementoOndeVoceEsta.appendChild(filhoElemento);
+    let neto = document.createElement('section');
+    neto.id = 'neto';
+    elementoOndeVoceEsta.firstElementChild.appendChild(neto);
+    console.log(neto.parentElement.parentElement.nextElementSibling);
+    function delElement (elemento) {
+      let elementoDel = document.querySelector(elemento);
+      let elementoPai = elementoDel.parentElement;
+      elementoPai.removeChild(elementoDel);
+    }
+    delElement('#primeiroFilho');
+    delElement('#terceiroFilho');
+    delElement('#quartoEUltimoFilho');
+    delElement('#segundoEUltimoFilhoDoFilho');
+    delElement('#irmaoElemento');
+    delElement('#filhoElemento');
+    delElement('#neto');
+  </script>
+</body>
+</html>
