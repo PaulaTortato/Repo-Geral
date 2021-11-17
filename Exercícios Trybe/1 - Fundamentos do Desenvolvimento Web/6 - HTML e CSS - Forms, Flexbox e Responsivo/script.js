@@ -70,20 +70,44 @@ for (let i = 0; i < estadosBr.length; i += 1) {
 btn.addEventListener("click", function (event) {
   event.preventDefault();
   let div = document.createElement("div");
-  let inputs = document.getElementsByTagName("input");
-  for (let i = 0; i < inputs.length; i += 1) {
-    if (inputs[i].value === "") {
+  let inputs = document.querySelectorAll("input[type='text']");
+  let labels = document.getElementsByClassName('form-label');
+  let checked = document.querySelector("input[type='radio']:checked")
+  let estados = document.getElementById('estado');
+  let resumo = document.getElementById('resumo');
+  let estadoSelec = '';
+  for (let i = 0; i < estados.children.length; i += 1) {
+    if (estados.children[i].selected) {
+      estadoSelec = estados.children[i].innerText;
+    }
+  }
+  for (let i = 0; i < labels.length; i += 1) {
+    if (labels[i].value === "") {
       let div = document.createElement("div");
       div.style.color = "red";
       div.innerText =
-        "Preencha o campo: " + inputs[i].previousElementSibling.innerText;
+        "Preencha o campo: " + labels[i].innerText;
       divContainer.appendChild(div);
     } else if (div.innerText.includes("Preencha")) {
       break;
     } else {
+      let div = document.createElement("div");
+      if (labels[i].innerText === 'Tipo') {
+        div.innerText =
+        labels[i].innerText + ": " + checked.nextElementSibling.innerText;
+        divContainer.appendChild(div);
+      } else if (labels[i].innerText === 'Estado') {
+        div.innerText =
+        labels[i].innerText + ": " + estadoSelec;
+        divContainer.appendChild(div);
+      } else if (labels[i].innerText === 'Resumo') {
+        div.innerText = labels[i].innerText + ": " + resumo.value;
+        divContainer.appendChild(div);
+      } else {
       div.innerText =
-        inputs[i].previousElementSibling.innerText + ": " + inputs[i].value;
+        labels[i].innerText + ": " + inputs[i].value;
       divContainer.appendChild(div);
+    }
     }
   }
 });
