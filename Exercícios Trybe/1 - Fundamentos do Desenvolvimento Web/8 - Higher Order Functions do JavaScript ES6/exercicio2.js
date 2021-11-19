@@ -75,3 +75,41 @@ function smallerName() {
 }
 
 console.log(smallerName());
+
+const expectedResult = [
+  {
+    age: 31,
+    author: 'Isaac Asimov',
+  },
+  {
+    age: 38,
+    author: 'H. P. Lovecraft',
+  },
+  {
+    age: 39,
+    author: 'Stephen King',
+  },
+  {
+    age: 43,
+    author: 'George R. R. Martin',
+  },
+  {
+    age: 45,
+    author: 'Frank Herbert',
+  },
+  {
+    age: 62,
+    author: 'J. R. R. Tolkien',
+  },
+];
+
+function nameAndAge() {
+  // escreva seu código aqui
+  const autoresIdade = books.map((livro) => {
+    const autores = {idade: livro.releaseYear - livro.author.birthYear, author: livro.author.name};
+    return autores;
+  });
+  return autoresIdade.sort((a, b) => a.idade - b.idade);
+}
+
+console.log(nameAndAge());

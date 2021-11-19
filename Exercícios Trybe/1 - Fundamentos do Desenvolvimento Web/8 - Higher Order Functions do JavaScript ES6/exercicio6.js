@@ -62,7 +62,7 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-const expectedResult = true;
+const expectedResult1 = true;
 
 function someBookWasReleaseOnThe80s() {
   // escreva seu código aqui
@@ -70,3 +70,20 @@ function someBookWasReleaseOnThe80s() {
 }
 
 console.log(someBookWasReleaseOnThe80s());
+
+const expectedResult2 = [
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu',
+];
+
+function oldBooks() {
+  // escreva seu código aqui
+  const livros60Anos = books.filter((livro) => (2021 - livro.releaseYear) >= 60);
+  const livros = livros60Anos.map((livro) => {
+    return livro.name;
+  })
+  return livros;
+}
+
+console.log(oldBooks());

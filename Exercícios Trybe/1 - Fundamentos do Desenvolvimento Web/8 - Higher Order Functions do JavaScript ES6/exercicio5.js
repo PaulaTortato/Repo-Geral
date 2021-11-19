@@ -62,7 +62,7 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-const expectedResult = false;
+const expectedResult1 = false;
 
 function everyoneWasBornOnSecXX() {
   // escreva seu código aqui
@@ -70,3 +70,21 @@ function everyoneWasBornOnSecXX() {
 }
 
 console.log(everyoneWasBornOnSecXX());
+
+const expectedResult2 = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien',
+];
+
+function fantasyOrScienceFictionAuthors() {
+  // escreva seu código aqui
+  const autores = books.filter((livro) => livro.genre === 'Ficção Científica' || livro.genre === 'Fantasia');
+  const autoresFicCienFan = autores.map((livro) => {
+    return livro.author.name;
+  })
+  return autoresFicCienFan.sort();
+}
+
+console.log(fantasyOrScienceFictionAuthors());

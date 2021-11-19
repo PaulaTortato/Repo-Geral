@@ -62,7 +62,7 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-const expectedResult = false;
+const expectedResult1 = false;
 
 function authorUnique() {
   // escreva seu código aqui
@@ -78,3 +78,13 @@ function authorUnique() {
 }
 
 console.log(authorUnique());
+
+const expectedResult2 = 'O Senhor dos Anéis';
+
+function authorWith3DotsOnName() {
+  // escreva seu código aqui
+  const livro = books.find((livro) => livro.author.name.startsWith('.', 1));
+  return livro.name;
+}
+
+console.log(authorWith3DotsOnName());
