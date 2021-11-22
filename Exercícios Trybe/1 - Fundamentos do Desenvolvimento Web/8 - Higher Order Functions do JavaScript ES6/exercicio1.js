@@ -69,7 +69,7 @@ function authorBornIn1947() {
 
 console.log(authorBornIn1947());
 
-const expectedResult = [
+const expectedResult1 = [
   'As Crônicas de Gelo e Fogo - Fantasia - George R. R. Martin',
   'O Senhor dos Anéis - Fantasia - J. R. R. Tolkien',
   'Fundação - Ficção Científica - Isaac Asimov',
@@ -87,3 +87,18 @@ function formatedBookNames() {
 }
 
 console.log(formatedBookNames());
+
+const expectedResult2 = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
+
+function reduceNames() {
+  // escreva seu código aqui
+  return books.reduce((acc, livro) => {
+    if(typeof acc === 'object') {
+      return `${acc.author.name}, ${livro.author.name}`;
+    } else {
+      return `${acc}, ${livro.author.name}`;
+    }
+  });
+}
+
+console.log(reduceNames());

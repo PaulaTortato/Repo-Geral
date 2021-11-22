@@ -76,7 +76,7 @@ function smallerName() {
 
 console.log(smallerName());
 
-const expectedResult = [
+const expectedResult1 = [
   {
     age: 31,
     author: 'Isaac Asimov',
@@ -113,3 +113,38 @@ function nameAndAge() {
 }
 
 console.log(nameAndAge());
+
+const expectedResult2 = 43;
+
+function averageAge() {
+  // escreva seu código aqui
+  const age = nameAndAge().reduce((acc, autor) => {
+    acc += autor.idade;
+    return acc;
+  }, 0);
+  return age / nameAndAge().length;
+}
+
+console.log(averageAge());
+
+
+const expectedResult3 = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
+
+function longestNamedBook() {
+  // escreva seu código aqui
+  return books.reduce((acc, livro) => {
+    if(acc.name.length > livro.name.length) return acc;
+    return livro;
+  });
+}
+
+console.log(longestNamedBook());
